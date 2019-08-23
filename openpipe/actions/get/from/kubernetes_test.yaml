@@ -1,0 +1,8 @@
+start:
+    - get from kubernetes:
+        list_pod_for_all_namespaces:
+            watch: false
+    - iterate: $items$
+    - limit: 5
+    - insert: $metadata$
+    - print: $namespace$ - $name$
